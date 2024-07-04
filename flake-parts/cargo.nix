@@ -8,6 +8,10 @@
     ...
   }: let
     libcamera = pkgs.libcamera.overrideAttrs (old: {
+      nativeBuildInputs = old.nativeBuildInputs ++ [pkgs.python3Packages.pybind11];
+      postPatch = ''
+        patchShebangs src/py/ utils/
+      '';
       src = pkgs.fetchFromGitHub {
         owner = "raspberrypi";
         repo = "libcamera";
