@@ -7,23 +7,11 @@
     self',
     ...
   }: let
-    libcamera = pkgs.libcamera.overrideAttrs (old: {
-      nativeBuildInputs = old.nativeBuildInputs ++ [pkgs.python3Packages.pybind11];
-      postPatch = ''
-        patchShebangs src/py/ utils/
-      '';
-      src = pkgs.fetchFromGitHub {
-        owner = "raspberrypi";
-        repo = "libcamera";
-        rev = "6ddd79b";
-        sha256 = "sha256-qqEMJzMotybf1nJp1dsz3zc910Qj0TmqCm1CwuSb1VY=";
-      };
-    });
     # packages required for building the rust packages
     extraPackages = [
       pkgs.pkg-config
       # pkgs.libcamera
-      libcamera
+      inputs'.libcamera.packages.libcamera
       pkgs.llvmPackages_latest.libclang.lib
       pkgs.rustPlatform.bindgenHook
       pkgs.stdenv.cc.cc.lib

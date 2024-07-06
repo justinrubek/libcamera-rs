@@ -2,6 +2,10 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    libcamera = {
+      url = "github:justinrubek/libcamera";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-filter.url = "github:numtide/nix-filter";
     fenix = {
       url = "github:nix-community/fenix";
