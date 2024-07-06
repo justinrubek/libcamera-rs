@@ -265,11 +265,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1720300202,
-        "narHash": "sha256-1F1I4rPiN+0usuJ27SlNqnaY7megwykvXV/Fl/JghuI=",
+        "lastModified": 1720306973,
+        "narHash": "sha256-fSmjmIVLV2x4s5qRmpn8a18bmvsRtaGMJhqxl1wiCEE=",
         "owner": "justinrubek",
         "repo": "libcamera",
-        "rev": "ccd260d5d562e28aa86a66b442738e5bad3b5488",
+        "rev": "dff054f639697ca69d02c4670fda1a3ff7007323",
         "type": "github"
       },
       "original": {
